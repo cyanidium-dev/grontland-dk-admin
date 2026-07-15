@@ -1,0 +1,106 @@
+import {defineField, defineType} from 'sanity'
+
+/* Project case — mirrors Frontend constants/projects.ts `Project`.
+   Services on the card become references to service documents. */
+export const project = defineType({
+  name: 'project',
+  title: 'Project',
+  type: 'document',
+  fields: [
+    defineField({name: 'title', title: 'Title', type: 'localeString', validation: (r) => r.required()}),
+    defineField({
+      name: 'slug',
+      title: 'Slug (Danish, both locales)',
+      type: 'slug',
+      options: {source: 'title.da'},
+      validation: (r) => r.required(),
+    }),
+    defineField({name: 'location', title: 'Location', type: 'string', validation: (r) => r.required()}),
+    defineField({name: 'objectType', title: 'Object type (fx privat bolig)', type: 'localeString'}),
+    defineField({
+      name: 'category',
+      title: 'Audience',
+      type: 'string',
+      options: {list: ['private', 'b2b'], layout: 'radio'},
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: 'primaryService',
+      title: 'Primary service (card chip)',
+      type: 'reference',
+      to: [{type: 'service'}],
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: 'services',
+      title: 'Service tags',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'service'}]}],
+    }),
+    defineField({name: 'seo', title: 'SEO', type: 'seoMeta', validation: (r) => r.required()}),
+    defineField({name: 'cardDesc', title: 'Card description', type: 'localeText', validation: (r) => r.required()}),
+    defineField({name: 'cardImage', title: 'Card photo', type: 'imageWithAlt', validation: (r) => r.required()}),
+    defineField({name: 'heroImage', title: 'Hero photo', type: 'imageWithAlt', validation: (r) => r.required()}),
+    defineField({name: 'intro', title: 'Intro', type: 'localeText', validation: (r) => r.required()}),
+    defineField({name: 'task', title: 'The task', type: 'localeText', validation: (r) => r.required()}),
+    defineField({
+      name: 'work',
+      title: 'Work performed (bullets)',
+      type: 'array',
+      of: [{type: 'localeString'}],
+      validation: (r) => r.min(2),
+    }),
+    defineField({
+      name: 'focus',
+      title: 'Focus points (bullets)',
+      type: 'array',
+      of: [{type: 'localeString'}],
+    }),
+    defineField({name: 'result', title: 'Result', type: 'localeText', validation: (r) => r.required()}),
+    defineField({
+      name: 'facts',
+      title: 'Facts',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          name: 'fact',
+          fields: [
+            defineField({name: 'label', title: 'Label', type: 'localeString', validation: (r) => r.required()}),
+            defineField({name: 'value', title: 'Value', type: 'localeString', validation: (r) => r.required()}),
+          ],
+          preview: {select: {title: 'label.da', subtitle: 'value.da'}},
+        },
+      ],
+    }),
+    defineField({
+      name: 'gallery',
+      title: 'Project gallery',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          name: 'projectPhoto',
+          fields: [
+            defineField({name: 'image', title: 'Photo', type: 'imageWithAlt', validation: (r) => r.required()}),
+            defineField({
+              name: 'kind',
+              title: 'Kind',
+              type: 'string',
+              options: {list: ['process', 'result', 'before', 'after']},
+              validation: (r) => r.required(),
+            }),
+          ],
+          preview: {select: {title: 'image.alt.da', subtitle: 'kind'}},
+        },
+      ],
+    }),
+    defineField({
+      name: 'related',
+      title: 'Related projects',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'project'}]}],
+    }),
+  ],
+  preview: {select: {title: 'title.da', subtitle: 'location', media: 'cardImage'}},
+})
