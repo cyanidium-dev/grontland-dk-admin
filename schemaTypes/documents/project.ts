@@ -26,10 +26,15 @@ export const project = defineType({
     }),
     defineField({
       name: 'primaryService',
-      title: 'Primary service (card chip)',
+      title: 'Primary service',
       type: 'reference',
       to: [{type: 'service'}],
       validation: (r) => r.required(),
+    }),
+    defineField({
+      name: 'serviceLabel',
+      title: 'Card chip label (fx "Havearbejde / terrasse"; falls back to the service name)',
+      type: 'localeString',
     }),
     defineField({
       name: 'services',

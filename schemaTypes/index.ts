@@ -27,6 +27,7 @@ import {homePage} from './documents/pages/homePage'
 import {kontaktPage} from './documents/pages/kontaktPage'
 import {omOsPage} from './documents/pages/omOsPage'
 import {privatePage} from './documents/pages/privatePage'
+import {projekterPage} from './documents/pages/projekterPage'
 import {ydelserIndexPage} from './documents/pages/ydelserIndexPage'
 
 export const schemaTypes = [
@@ -57,6 +58,7 @@ export const schemaTypes = [
   kontaktPage,
   privatePage,
   entreprenorerPage,
+  projekterPage,
   ydelserIndexPage,
   galleriPage,
 ]

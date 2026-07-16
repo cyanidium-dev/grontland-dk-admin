@@ -16,6 +16,7 @@ export const structure: StructureResolver = (S) =>
       singleton(S, 'ydelserIndexPage', 'Ydelser (indeks)'),
       singleton(S, 'privatePage', 'Private kunder'),
       singleton(S, 'entreprenorerPage', 'Entreprenører'),
+      singleton(S, 'projekterPage', 'Projekter (liste)'),
       singleton(S, 'galleriPage', 'Galleri'),
       singleton(S, 'omOsPage', 'Om os'),
       singleton(S, 'kontaktPage', 'Kontakt'),

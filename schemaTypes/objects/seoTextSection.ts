@@ -11,10 +11,10 @@ export const seoTextSection = defineType({
     defineField({name: 'text', title: 'Text (120–180 words)', type: 'localeText', validation: (r) => r.required()}),
     defineField({
       name: 'images',
-      title: 'Photos (1–2)',
+      title: 'Photos (0–2; the galleri block renders without photos)',
       type: 'array',
       of: [{type: 'imageWithAlt'}],
-      validation: (r) => r.min(1).max(2),
+      validation: (r) => r.max(2),
     }),
   ],
   preview: {select: {title: 'h2.da'}},
