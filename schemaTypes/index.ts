@@ -1,8 +1,6 @@
 /**
  * Schema registry. Merge map (which site sections share which type):
  * docs/superpowers/plans/2026-07-15-cms-schemas-phase2.md in the workspace.
- * Phase 2b adds the page singletons (home, om, kontakt, private, b2b,
- * ydelser index, galleri) composed from the same objects.
  */
 import {ctaBand} from './objects/ctaBand'
 import {ctaLink} from './objects/ctaLink'
@@ -15,11 +13,21 @@ import {priceList} from './objects/priceList'
 import {seoMeta} from './objects/seoMeta'
 import {seoTextSection} from './objects/seoTextSection'
 import {stepsSection} from './objects/stepsSection'
+import {teaserSection} from './objects/teaserSection'
 
 import {galleryCategory} from './documents/galleryCategory'
 import {project} from './documents/project'
+import {quoteForm} from './documents/quoteForm'
 import {service} from './documents/service'
 import {siteSettings} from './documents/siteSettings'
+
+import {entreprenorerPage} from './documents/pages/entreprenorerPage'
+import {galleriPage} from './documents/pages/galleriPage'
+import {homePage} from './documents/pages/homePage'
+import {kontaktPage} from './documents/pages/kontaktPage'
+import {omOsPage} from './documents/pages/omOsPage'
+import {privatePage} from './documents/pages/privatePage'
+import {ydelserIndexPage} from './documents/pages/ydelserIndexPage'
 
 export const schemaTypes = [
   // primitives
@@ -36,9 +44,19 @@ export const schemaTypes = [
   priceList,
   seoTextSection,
   ctaBand,
-  // documents
+  teaserSection,
+  // settings + collections
   siteSettings,
+  quoteForm,
   galleryCategory,
   project,
   service,
+  // page singletons
+  homePage,
+  omOsPage,
+  kontaktPage,
+  privatePage,
+  entreprenorerPage,
+  ydelserIndexPage,
+  galleriPage,
 ]

@@ -17,6 +17,11 @@ export const service = defineType({
       validation: (r) => r.required(),
     }),
     defineField({name: 'order', title: 'Menu order', type: 'number'}),
+    defineField({
+      name: 'cardDesc',
+      title: 'Card description (home teaser + /ydelser index; falls back to hero sub)',
+      type: 'localeText',
+    }),
     defineField({name: 'seo', title: 'SEO', type: 'seoMeta', validation: (r) => r.required()}),
     defineField({name: 'hero', title: 'Hero', type: 'heroSection', validation: (r) => r.required()}),
     defineField({name: 'scope', title: 'Scope ("Hvad laver vi")', type: 'cardGrid', validation: (r) => r.required()}),
