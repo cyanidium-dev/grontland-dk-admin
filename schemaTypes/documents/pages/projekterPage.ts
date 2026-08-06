@@ -8,9 +8,9 @@ export const projekterPage = defineType({
   type: 'document',
   fields: [
     defineField({name: 'seo', title: 'SEO', type: 'seoMeta', validation: (r) => r.required()}),
-    defineField({name: 'h1', title: 'H1', type: 'localeString', validation: (r) => r.required()}),
-    defineField({name: 'sub', title: 'Sub line', type: 'localeText'}),
-    defineField({name: 'emptyFilter', title: 'Empty-filter message', type: 'localeString'}),
+    defineField({name: 'h1', title: 'H1', type: 'string', validation: (r) => r.required()}),
+    defineField({name: 'sub', title: 'Sub line', type: 'text'}),
+    defineField({name: 'emptyFilter', title: 'Empty-filter message', type: 'string'}),
     defineField({name: 'cta', title: 'Closing CTA', type: 'ctaBand'}),
   ],
   preview: {prepare: () => ({title: 'Projekter (liste)'})},

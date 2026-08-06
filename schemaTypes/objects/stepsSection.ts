@@ -8,8 +8,8 @@ export const stepsSection = defineType({
   title: 'Steps',
   type: 'object',
   fields: [
-    defineField({name: 'h2', title: 'Heading', type: 'localeString', validation: (r) => r.required()}),
-    defineField({name: 'intro', title: 'Intro line', type: 'localeText'}),
+    defineField({name: 'h2', title: 'Heading', type: 'string', validation: (r) => r.required()}),
+    defineField({name: 'intro', title: 'Intro line', type: 'text'}),
     defineField({
       name: 'steps',
       title: 'Steps',
@@ -19,10 +19,10 @@ export const stepsSection = defineType({
           type: 'object',
           name: 'step',
           fields: [
-            defineField({name: 'title', title: 'Title', type: 'localeString', validation: (r) => r.required()}),
-            defineField({name: 'desc', title: 'Text', type: 'localeText', validation: (r) => r.required()}),
+            defineField({name: 'title', title: 'Title', type: 'string', validation: (r) => r.required()}),
+            defineField({name: 'desc', title: 'Text', type: 'text', validation: (r) => r.required()}),
           ],
-          preview: {select: {title: 'title.da', subtitle: 'desc.da'}},
+          preview: {select: {title: 'title', subtitle: 'desc'}},
         },
       ],
       validation: (r) => r.min(3).max(5),
@@ -30,5 +30,5 @@ export const stepsSection = defineType({
     defineField({name: 'cta', title: 'CTA under the steps', type: 'ctaLink'}),
     defineField({name: 'backgroundImage', title: 'Background photo (full-bleed)', type: 'imageWithAlt'}),
   ],
-  preview: {select: {title: 'h2.da'}},
+  preview: {select: {title: 'h2'}},
 })

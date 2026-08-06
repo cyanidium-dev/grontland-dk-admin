@@ -1,4 +1,9 @@
 /**
+ * ARCHIVED — DO NOT RUN. English locale fields were removed (2026-08 full
+ * locale strip). Kept only as history of prior EN copy seeds/patches.
+ */
+
+/**
  * Demolition & strip-out page edits per client spec (2026-07-24,
  * Gront_Land_DK_demolition_service_EN_edits.md): 11 EN rewrites + 9 DA
  * parity fields (the absolute promises and unverified claims exist in the

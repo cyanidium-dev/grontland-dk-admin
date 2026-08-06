@@ -9,9 +9,9 @@ export const kontaktPage = defineType({
   fields: [
     defineField({name: 'seo', title: 'SEO', type: 'seoMeta', validation: (r) => r.required()}),
     defineField({name: 'hero', title: 'Hero', type: 'heroSection', validation: (r) => r.required()}),
-    defineField({name: 'formH2', title: 'Form heading', type: 'localeString'}),
-    defineField({name: 'infoH2', title: 'Direct-contact heading', type: 'localeString'}),
-    defineField({name: 'infoNote', title: 'Direct-contact note (fx lørdag efter aftale)', type: 'localeString'}),
+    defineField({name: 'formH2', title: 'Form heading', type: 'string'}),
+    defineField({name: 'infoH2', title: 'Direct-contact heading', type: 'string'}),
+    defineField({name: 'infoNote', title: 'Direct-contact note (fx lørdag efter aftale)', type: 'string'}),
     defineField({name: 'steps', title: '"Hvad sker der, når du har skrevet?"', type: 'stepsSection'}),
     defineField({name: 'audiences', title: 'Audience cards (image + link per card)', type: 'cardGrid'}),
   ],

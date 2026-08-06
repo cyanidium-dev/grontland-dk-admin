@@ -8,7 +8,6 @@ import {cardGrid} from './objects/cardGrid'
 import {faqSection} from './objects/faqSection'
 import {heroSection} from './objects/heroSection'
 import {imageWithAlt} from './objects/imageWithAlt'
-import {localeString, localeText} from './objects/locale'
 import {priceList} from './objects/priceList'
 import {seoMeta} from './objects/seoMeta'
 import {seoTextSection} from './objects/seoTextSection'
@@ -32,8 +31,6 @@ import {ydelserIndexPage} from './documents/pages/ydelserIndexPage'
 
 export const schemaTypes = [
   // primitives
-  localeString,
-  localeText,
   imageWithAlt,
   ctaLink,
   seoMeta,

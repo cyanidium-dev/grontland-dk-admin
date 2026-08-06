@@ -9,7 +9,7 @@ export const imageWithAlt = defineType({
     defineField({
       name: 'alt',
       title: 'Alt text',
-      type: 'localeString',
+      type: 'string',
       validation: (r) => r.required(),
     }),
   ],

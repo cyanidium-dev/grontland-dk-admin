@@ -7,8 +7,8 @@ export const ctaBand = defineType({
   title: 'CTA band',
   type: 'object',
   fields: [
-    defineField({name: 'h2', title: 'Heading', type: 'localeString', validation: (r) => r.required()}),
-    defineField({name: 'text', title: 'Text', type: 'localeText', validation: (r) => r.required()}),
+    defineField({name: 'h2', title: 'Heading', type: 'string', validation: (r) => r.required()}),
+    defineField({name: 'text', title: 'Text', type: 'text', validation: (r) => r.required()}),
     defineField({name: 'primary', title: 'Primary CTA', type: 'ctaLink', validation: (r) => r.required()}),
     defineField({
       name: 'crosslinks',
@@ -19,5 +19,5 @@ export const ctaBand = defineType({
     }),
     defineField({name: 'image', title: 'Photo (right bleed)', type: 'imageWithAlt'}),
   ],
-  preview: {select: {title: 'h2.da'}},
+  preview: {select: {title: 'h2'}},
 })

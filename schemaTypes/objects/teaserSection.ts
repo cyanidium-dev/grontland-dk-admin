@@ -10,8 +10,8 @@ export const teaserSection = defineType({
   title: 'Teaser section',
   type: 'object',
   fields: [
-    defineField({name: 'h2', title: 'Heading', type: 'localeString', validation: (r) => r.required()}),
-    defineField({name: 'sub', title: 'Sub line', type: 'localeText'}),
+    defineField({name: 'h2', title: 'Heading', type: 'string', validation: (r) => r.required()}),
+    defineField({name: 'sub', title: 'Sub line', type: 'text'}),
     defineField({
       name: 'ctas',
       title: 'CTAs',
@@ -27,5 +27,5 @@ export const teaserSection = defineType({
       validation: (r) => r.max(4),
     }),
   ],
-  preview: {select: {title: 'h2.da'}},
+  preview: {select: {title: 'h2'}},
 })

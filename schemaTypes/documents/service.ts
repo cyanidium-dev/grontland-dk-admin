@@ -8,19 +8,19 @@ export const service = defineType({
   title: 'Service',
   type: 'document',
   fields: [
-    defineField({name: 'nav', title: 'Name (nav/footer label)', type: 'localeString', validation: (r) => r.required()}),
+    defineField({name: 'nav', title: 'Name (nav/footer label)', type: 'string', validation: (r) => r.required()}),
     defineField({
       name: 'slug',
-      title: 'Slug (Danish, both locales)',
+      title: 'Slug',
       type: 'slug',
-      options: {source: 'nav.da'},
+      options: {source: 'nav'},
       validation: (r) => r.required(),
     }),
     defineField({name: 'order', title: 'Menu order', type: 'number'}),
     defineField({
       name: 'cardDesc',
       title: 'Card description (home teaser + /ydelser index; falls back to hero sub)',
-      type: 'localeText',
+      type: 'text',
     }),
     defineField({name: 'seo', title: 'SEO', type: 'seoMeta', validation: (r) => r.required()}),
     defineField({name: 'hero', title: 'Hero', type: 'heroSection', validation: (r) => r.required()}),
@@ -46,5 +46,5 @@ export const service = defineType({
     defineField({name: 'seoText', title: 'SEO text block', type: 'seoTextSection', validation: (r) => r.required()}),
   ],
   orderings: [{title: 'Menu order', name: 'order', by: [{field: 'order', direction: 'asc'}]}],
-  preview: {select: {title: 'nav.da', subtitle: 'slug.current'}},
+  preview: {select: {title: 'nav', subtitle: 'slug.current'}},
 })

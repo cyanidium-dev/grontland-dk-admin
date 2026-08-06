@@ -1,4 +1,7 @@
 /**
+ * ARCHIVED — DO NOT RUN. English locale fields were removed (2026-08 full
+ * locale strip). Kept only as history of prior EN copy seeds/patches.
+ *
  * Phase 6: English content for the CMS documents the frontend reads
  * (siteSettings, gallery categories, projects, services, collection-page
  * singletons). Translations are intent-adjusted, not word-for-word.

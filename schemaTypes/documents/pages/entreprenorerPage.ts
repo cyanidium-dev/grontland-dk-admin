@@ -19,8 +19,8 @@ export const entreprenorerPage = defineType({
       title: 'Case highlight',
       type: 'object',
       fields: [
-        defineField({name: 'h2', title: 'Heading', type: 'localeString', validation: (r) => r.required()}),
-        defineField({name: 'text', title: 'Text', type: 'localeText', validation: (r) => r.required()}),
+        defineField({name: 'h2', title: 'Heading', type: 'string', validation: (r) => r.required()}),
+        defineField({name: 'text', title: 'Text', type: 'text', validation: (r) => r.required()}),
         defineField({
           name: 'project',
           title: 'Project',
@@ -42,7 +42,7 @@ export const entreprenorerPage = defineType({
       title: 'Trades covered',
       type: 'object',
       fields: [
-        defineField({name: 'h2', title: 'Heading', type: 'localeString', validation: (r) => r.required()}),
+        defineField({name: 'h2', title: 'Heading', type: 'string', validation: (r) => r.required()}),
         defineField({
           name: 'services',
           title: 'Services (links derive from these)',

@@ -25,8 +25,8 @@ export const galleryCategory = defineType({
       options: {list: CATEGORY_KEYS},
       validation: (r) => r.required(),
     }),
-    defineField({name: 'title', title: 'Title', type: 'localeString', validation: (r) => r.required()}),
-    defineField({name: 'description', title: 'Section description (/galleri)', type: 'localeText'}),
+    defineField({name: 'title', title: 'Title', type: 'string', validation: (r) => r.required()}),
+    defineField({name: 'description', title: 'Section description (/galleri)', type: 'text'}),
     defineField({name: 'cta', title: 'Service-page CTA (/galleri section button)', type: 'ctaLink'}),
     defineField({
       name: 'photos',
@@ -38,5 +38,5 @@ export const galleryCategory = defineType({
     defineField({name: 'order', title: 'Sort order', type: 'number'}),
   ],
   orderings: [{title: 'Sort order', name: 'order', by: [{field: 'order', direction: 'asc'}]}],
-  preview: {select: {title: 'title.da', subtitle: 'key'}},
+  preview: {select: {title: 'title', subtitle: 'key'}},
 })

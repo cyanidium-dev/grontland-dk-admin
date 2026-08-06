@@ -1,4 +1,9 @@
 /**
+ * ARCHIVED — DO NOT RUN. English locale fields were removed (2026-08 full
+ * locale strip). Kept only as history of prior EN copy seeds/patches.
+ */
+
+/**
  * Masonry / Turnkey / Carpentry / Painting page text edits per the four
  * client specs (2026-07-24, Gront_Land_DK_*_EN_edits.md): ~38 EN field
  * rewrites + DA masonry parity (the "private og offentlige bygherrer"

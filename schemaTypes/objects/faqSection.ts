@@ -7,7 +7,7 @@ export const faqSection = defineType({
   title: 'FAQ',
   type: 'object',
   fields: [
-    defineField({name: 'h2', title: 'Heading', type: 'localeString', validation: (r) => r.required()}),
+    defineField({name: 'h2', title: 'Heading', type: 'string', validation: (r) => r.required()}),
     defineField({
       name: 'items',
       title: 'Questions',
@@ -17,14 +17,14 @@ export const faqSection = defineType({
           type: 'object',
           name: 'faqItem',
           fields: [
-            defineField({name: 'q', title: 'Question', type: 'localeString', validation: (r) => r.required()}),
-            defineField({name: 'a', title: 'Answer', type: 'localeText', validation: (r) => r.required()}),
+            defineField({name: 'q', title: 'Question', type: 'string', validation: (r) => r.required()}),
+            defineField({name: 'a', title: 'Answer', type: 'text', validation: (r) => r.required()}),
           ],
-          preview: {select: {title: 'q.da'}},
+          preview: {select: {title: 'q'}},
         },
       ],
       validation: (r) => r.min(3).max(8),
     }),
   ],
-  preview: {select: {title: 'h2.da'}},
+  preview: {select: {title: 'h2'}},
 })

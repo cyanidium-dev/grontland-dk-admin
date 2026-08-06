@@ -1,4 +1,7 @@
 /**
+ * ARCHIVED — DO NOT RUN. English locale fields were removed (2026-08 full
+ * locale strip). Kept only as history of prior EN copy seeds/patches.
+ *
  * Homepage service-card text edits per client spec (2026-07-23,
  * Gront_Land_DK_homepage_EN_edits.md): six cardDesc.en rewrites, plus the
  * Danish Paving card gains terraces + drainage (facts confirmed from the old

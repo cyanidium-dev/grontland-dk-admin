@@ -7,10 +7,10 @@ export const ctaLink = defineType({
   title: 'Link / CTA',
   type: 'object',
   fields: [
-    defineField({name: 'label', title: 'Label', type: 'localeString', validation: (r) => r.required()}),
+    defineField({name: 'label', title: 'Label', type: 'string', validation: (r) => r.required()}),
     defineField({name: 'href', title: 'Path', type: 'string', validation: (r) => r.required()}),
   ],
   preview: {
-    select: {title: 'label.da', subtitle: 'href'},
+    select: {title: 'label', subtitle: 'href'},
   },
 })

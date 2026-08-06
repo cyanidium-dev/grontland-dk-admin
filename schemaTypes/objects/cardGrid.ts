@@ -10,8 +10,8 @@ export const cardGrid = defineType({
   title: 'Card grid',
   type: 'object',
   fields: [
-    defineField({name: 'h2', title: 'Heading', type: 'localeString', validation: (r) => r.required()}),
-    defineField({name: 'intro', title: 'Intro line', type: 'localeText'}),
+    defineField({name: 'h2', title: 'Heading', type: 'string', validation: (r) => r.required()}),
+    defineField({name: 'intro', title: 'Intro line', type: 'text'}),
     defineField({
       name: 'items',
       title: 'Cards',
@@ -21,8 +21,8 @@ export const cardGrid = defineType({
           type: 'object',
           name: 'card',
           fields: [
-            defineField({name: 'title', title: 'Title', type: 'localeString', validation: (r) => r.required()}),
-            defineField({name: 'desc', title: 'Text', type: 'localeText', validation: (r) => r.required()}),
+            defineField({name: 'title', title: 'Title', type: 'string', validation: (r) => r.required()}),
+            defineField({name: 'desc', title: 'Text', type: 'text', validation: (r) => r.required()}),
             defineField({name: 'image', title: 'Photo (card layouts with images)', type: 'imageWithAlt'}),
             defineField({
               name: 'links',
@@ -32,7 +32,7 @@ export const cardGrid = defineType({
               validation: (r) => r.max(2),
             }),
           ],
-          preview: {select: {title: 'title.da', subtitle: 'desc.da', media: 'image'}},
+          preview: {select: {title: 'title', subtitle: 'desc', media: 'image'}},
         },
       ],
       validation: (r) => r.min(2),
@@ -46,5 +46,5 @@ export const cardGrid = defineType({
     }),
     defineField({name: 'backgroundImage', title: 'Background photo (full-bleed band)', type: 'imageWithAlt'}),
   ],
-  preview: {select: {title: 'h2.da'}},
+  preview: {select: {title: 'h2'}},
 })

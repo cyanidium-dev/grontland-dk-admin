@@ -7,9 +7,9 @@ export const heroSection = defineType({
   title: 'Hero',
   type: 'object',
   fields: [
-    defineField({name: 'label', title: 'Eyebrow label', type: 'localeString'}),
-    defineField({name: 'h1', title: 'H1', type: 'localeString', validation: (r) => r.required()}),
-    defineField({name: 'sub', title: 'Sub line', type: 'localeText', validation: (r) => r.required()}),
+    defineField({name: 'label', title: 'Eyebrow label', type: 'string'}),
+    defineField({name: 'h1', title: 'H1', type: 'string', validation: (r) => r.required()}),
+    defineField({name: 'sub', title: 'Sub line', type: 'text', validation: (r) => r.required()}),
     defineField({name: 'image', title: 'Photo', type: 'imageWithAlt'}),
     defineField({
       name: 'ctas',
@@ -22,9 +22,9 @@ export const heroSection = defineType({
       name: 'trustChips',
       title: 'Trust chips',
       type: 'array',
-      of: [{type: 'localeString'}],
+      of: [{type: 'string'}],
       validation: (r) => r.max(3),
     }),
   ],
-  preview: {select: {title: 'h1.da'}},
+  preview: {select: {title: 'h1'}},
 })

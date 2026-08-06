@@ -7,8 +7,8 @@ export const priceList = defineType({
   title: 'Price list',
   type: 'object',
   fields: [
-    defineField({name: 'h2', title: 'Heading', type: 'localeString', validation: (r) => r.required()}),
-    defineField({name: 'note', title: 'Note (ex moms, fast pris…)', type: 'localeText', validation: (r) => r.required()}),
+    defineField({name: 'h2', title: 'Heading', type: 'string', validation: (r) => r.required()}),
+    defineField({name: 'note', title: 'Note (ex moms, fast pris…)', type: 'text', validation: (r) => r.required()}),
     defineField({
       name: 'rows',
       title: 'Rows',
@@ -18,14 +18,14 @@ export const priceList = defineType({
           type: 'object',
           name: 'priceRow',
           fields: [
-            defineField({name: 'label', title: 'Label', type: 'localeString', validation: (r) => r.required()}),
-            defineField({name: 'value', title: 'Price', type: 'localeString', validation: (r) => r.required()}),
+            defineField({name: 'label', title: 'Label', type: 'string', validation: (r) => r.required()}),
+            defineField({name: 'value', title: 'Price', type: 'string', validation: (r) => r.required()}),
           ],
-          preview: {select: {title: 'label.da', subtitle: 'value.da'}},
+          preview: {select: {title: 'label', subtitle: 'value'}},
         },
       ],
       validation: (r) => r.min(1),
     }),
   ],
-  preview: {select: {title: 'h2.da'}},
+  preview: {select: {title: 'h2'}},
 })

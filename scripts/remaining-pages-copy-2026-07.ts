@@ -1,4 +1,9 @@
 /**
+ * ARCHIVED — DO NOT RUN. English locale fields were removed (2026-08 full
+ * locale strip). Kept only as history of prior EN copy seeds/patches.
+ */
+
+/**
  * Proactive copy pass on the not-yet-spec'd CMS content, applying the
  * editorial rulebook derived from the client's six specs (workspace
  * docs/remaining-pages-copy-review.md): calques, absolute promises,

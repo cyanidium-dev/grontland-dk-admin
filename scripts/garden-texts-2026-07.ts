@@ -1,4 +1,9 @@
 /**
+ * ARCHIVED — DO NOT RUN. English locale fields were removed (2026-08 full
+ * locale strip). Kept only as history of prior EN copy seeds/patches.
+ */
+
+/**
  * Garden work (havearbejde) service-page text edits per client spec
  * (2026-07-23, Gront_Land_DK_garden_service_EN_edits.md): 12 EN field
  * rewrites + 2 DA parity fixes ("Fast prisramme" contradicts the indicative

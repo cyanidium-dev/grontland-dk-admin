@@ -14,8 +14,8 @@ export const omOsPage = defineType({
       title: '"Hvem er vi" (photo + facts)',
       type: 'object',
       fields: [
-        defineField({name: 'h2', title: 'Heading', type: 'localeString', validation: (r) => r.required()}),
-        defineField({name: 'text', title: 'Text', type: 'localeText', validation: (r) => r.required()}),
+        defineField({name: 'h2', title: 'Heading', type: 'string', validation: (r) => r.required()}),
+        defineField({name: 'text', title: 'Text', type: 'text', validation: (r) => r.required()}),
         defineField({name: 'image', title: 'Photo (left bleed)', type: 'imageWithAlt', validation: (r) => r.required()}),
         defineField({
           name: 'facts',
@@ -26,10 +26,10 @@ export const omOsPage = defineType({
               type: 'object',
               name: 'fact',
               fields: [
-                defineField({name: 'label', title: 'Label', type: 'localeString', validation: (r) => r.required()}),
-                defineField({name: 'value', title: 'Value', type: 'localeString', validation: (r) => r.required()}),
+                defineField({name: 'label', title: 'Label', type: 'string', validation: (r) => r.required()}),
+                defineField({name: 'value', title: 'Value', type: 'string', validation: (r) => r.required()}),
               ],
-              preview: {select: {title: 'label.da', subtitle: 'value.da'}},
+              preview: {select: {title: 'label', subtitle: 'value'}},
             },
           ],
           validation: (r) => r.max(4),
@@ -42,8 +42,8 @@ export const omOsPage = defineType({
       title: 'Team',
       type: 'object',
       fields: [
-        defineField({name: 'h2', title: 'Heading', type: 'localeString', validation: (r) => r.required()}),
-        defineField({name: 'intro', title: 'Intro', type: 'localeText'}),
+        defineField({name: 'h2', title: 'Heading', type: 'string', validation: (r) => r.required()}),
+        defineField({name: 'intro', title: 'Intro', type: 'text'}),
         defineField({
           name: 'members',
           title: 'Members',
@@ -54,18 +54,18 @@ export const omOsPage = defineType({
               name: 'member',
               fields: [
                 defineField({name: 'name', title: 'Name', type: 'string', validation: (r) => r.required()}),
-                defineField({name: 'role', title: 'Role', type: 'localeString', validation: (r) => r.required()}),
-                defineField({name: 'note', title: 'Note (fx erfaring)', type: 'localeString'}),
+                defineField({name: 'role', title: 'Role', type: 'string', validation: (r) => r.required()}),
+                defineField({name: 'note', title: 'Note (fx erfaring)', type: 'string'}),
                 defineField({name: 'image', title: 'Photo', type: 'imageWithAlt'}),
                 defineField({
                   name: 'trades',
                   title: 'Responsibilities',
                   type: 'array',
-                  of: [{type: 'localeString'}],
+                  of: [{type: 'string'}],
                 }),
                 defineField({name: 'link', title: 'Service link', type: 'ctaLink'}),
               ],
-              preview: {select: {title: 'name', subtitle: 'role.da', media: 'image'}},
+              preview: {select: {title: 'name', subtitle: 'role', media: 'image'}},
             },
           ],
         }),

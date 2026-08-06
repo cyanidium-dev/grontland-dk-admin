@@ -7,8 +7,8 @@ export const seoTextSection = defineType({
   title: 'SEO text',
   type: 'object',
   fields: [
-    defineField({name: 'h2', title: 'Heading', type: 'localeString', validation: (r) => r.required()}),
-    defineField({name: 'text', title: 'Text (120–180 words)', type: 'localeText', validation: (r) => r.required()}),
+    defineField({name: 'h2', title: 'Heading', type: 'string', validation: (r) => r.required()}),
+    defineField({name: 'text', title: 'Text (120–180 words)', type: 'text', validation: (r) => r.required()}),
     defineField({
       name: 'images',
       title: 'Photos (0–2; the galleri block renders without photos)',
@@ -17,5 +17,5 @@ export const seoTextSection = defineType({
       validation: (r) => r.max(2),
     }),
   ],
-  preview: {select: {title: 'h2.da'}},
+  preview: {select: {title: 'h2'}},
 })

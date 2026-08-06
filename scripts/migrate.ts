@@ -1,7 +1,8 @@
 /**
  * Phase 3 migration: pours the Frontend's typed constants into the dataset.
- * Danish fields only (en stays empty). Idempotent: deterministic _ids +
- * createOrReplace; Sanity dedupes identical image uploads by content hash.
+ * Danish plain strings only (locales flattened 2026-08). Idempotent:
+ * deterministic _ids + createOrReplace; Sanity dedupes identical image
+ * uploads by content hash.
  *
  * Run from CMS/:  npx sanity exec scripts/migrate.ts --with-user-token
  */
@@ -77,9 +78,9 @@ const PUBLIC_DIR = path.resolve(__dirname, '../../grontland-dk-frontend/public')
 let keyCounter = 0
 const key = () => `k${(keyCounter++).toString(36).padStart(4, '0')}`
 
-const ls = (da: string) => ({_type: 'localeString', da})
-const lt = (da: string) => ({_type: 'localeText', da})
-const lsItem = (da: string) => ({...ls(da), _key: key()})
+const ls = (da: string) => da
+const lt = (da: string) => da
+const lsItem = (da: string) => da
 const ref = (id: string) => ({_type: 'reference', _ref: id})
 const refItem = (id: string) => ({...ref(id), _key: key()})
 const slugOf = (href: string) => href.split('/').filter(Boolean).pop() as string
