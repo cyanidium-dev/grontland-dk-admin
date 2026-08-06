@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
-/* Service page — mirrors Frontend constants/services `ServiceContent`.
+/* Service page — mirrors Frontend/Preview service content.
    Fixed section order lives in the frontend route; editors fill the fields.
-   prices is optional: the section hides when empty (never invent prices). */
+   No public price list (removed Aug 2026 — forespørgsel CTAs). */
 export const service = defineType({
   name: 'service',
   title: 'Service',
@@ -25,7 +25,6 @@ export const service = defineType({
     defineField({name: 'seo', title: 'SEO', type: 'seoMeta', validation: (r) => r.required()}),
     defineField({name: 'hero', title: 'Hero', type: 'heroSection', validation: (r) => r.required()}),
     defineField({name: 'scope', title: 'Scope ("Hvad laver vi")', type: 'cardGrid', validation: (r) => r.required()}),
-    defineField({name: 'prices', title: 'Prices (optional — hides when empty)', type: 'priceList'}),
     defineField({name: 'process', title: 'Process', type: 'stepsSection', validation: (r) => r.required()}),
     defineField({name: 'ctaImage', title: 'Closing CTA photo', type: 'imageWithAlt'}),
     defineField({

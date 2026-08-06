@@ -356,21 +356,7 @@ async function buildDocs() {
         trustChips: s.trustChips,
       }),
       scope: await cardGrid({h2: s.scope.h2, items: s.scope.items}),
-      ...(s.prices
-        ? {
-            prices: {
-              _type: 'priceList',
-              h2: ls(s.prices.h2),
-              note: lt(s.prices.note),
-              rows: s.prices.rows.map((r) => ({
-                _type: 'priceRow',
-                _key: key(),
-                label: ls(r.label),
-                value: ls(r.value),
-              })),
-            },
-          }
-        : {}),
+      // Public price list schema removed (client Aug 2026).
       process: await stepsSection({
         h2: s.process.h2,
         steps: s.process.steps,

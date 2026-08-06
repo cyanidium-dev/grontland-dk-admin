@@ -8,7 +8,6 @@ import {cardGrid} from './objects/cardGrid'
 import {faqSection} from './objects/faqSection'
 import {heroSection} from './objects/heroSection'
 import {imageWithAlt} from './objects/imageWithAlt'
-import {priceList} from './objects/priceList'
 import {seoMeta} from './objects/seoMeta'
 import {seoTextSection} from './objects/seoTextSection'
 import {stepsSection} from './objects/stepsSection'
@@ -39,7 +38,6 @@ export const schemaTypes = [
   cardGrid,
   stepsSection,
   faqSection,
-  priceList,
   seoTextSection,
   ctaBand,
   teaserSection,
