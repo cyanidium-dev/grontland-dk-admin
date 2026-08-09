@@ -11,6 +11,7 @@ const CATEGORY_KEYS = [
   'malerservice',
   'tomrerarbejde',
   'totalentreprise',
+  'demonteringsarbejde',
 ]
 
 export const galleryCategory = defineType({
